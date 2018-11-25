@@ -1,0 +1,18 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': likes > 0,
+                'list-group-item-danger': likes < 0}">
+    <div style="float:left;"><p [ngStyle]="{color: getColor()}">{{ title }}</p></div>
+    <div style="float: right;">{{ creationDate | date: 'd/M/y, H' }} H</div>
+    <div style="clear: both;"></div>
+    <p [ngStyle]="{color: getColor()}">{{ content }}</p>
+    <div style="float : left;">
+      <button class="btn btn-sm btn-success" (click)="onDoLoveIt()">Love It !</button>
+      <button class="btn btn-sm btn-danger" (click)="onDoNotLoveIt()">Don't Love It !</button>
+    </div>
+    <div style="float : right;">
+      <button class="btn btn-default pull-right" (click)="onDelete()">
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
+    </div>
+    <div style="clear: both;"></div>
+</li>
